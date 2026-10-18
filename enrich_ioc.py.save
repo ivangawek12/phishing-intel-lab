@@ -1,0 +1,114 @@
+cd ~/phishing-intel-lab && rm -f enrich_ioc.py && cat > enrich_ioc.py <<'PY'
+#!/usr/bin/env python3
+import json
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlsplit
+
+OUT = Path("data")
+OUT.mkdir(exist_ok=True)
+
+def run(cmd):
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
+        return r.stdout.strip() if r.returncode == 0 else ""
+    except (OSError, subprocess.TimeoutExpired):
+        return ""
+
+def main():
+    raw = input("URL HTTP(S) o hostname: ").strip()
+    candidate = raw if "://" in raw else "//" + raw
+
+    try:
+        parsed = urlsplit(candidate)
+        host = parsed.hostname
+        port = parsed.port
+    except ValueError:
+        print("[ERROR] Entrada inválida.")
+        return
+
+    if (not host or any(c.isspace() for c in raw)
+        or port is not None
+        or parsed.username is not None
+        or parsed.password is not None):
+        print("[ERROR] URL o hostname inválido.")
+        return
+
+    if parsed.scheme and parsed.scheme.lower() not in ("http", "https"):
+        print("[ERROR] Solo se admite HTTP o HTTPS.")
+        return
+
+    host = host.rstrip(".").lower()
+    labels = host.split(".")
+    if (len(host) > 253 or len(labels) < 2
+        or any(not label or len(label) > 63
+               or label.startswith("-") or label.endswith("-")
+               or not label.isascii()
+               or not all(c.isalnum() or c == "-" for c in label)
+               for label in labels)):
+        print("[ERROR] Formato de hostname inválido.")
+        return
+
+    print(f"\n[+] Hostname: {host}")
+    print("[+] Consultando DNS A...")
+    output = run(["dig", "+short", "A", host])
+    ips = []
+    for line in output.splitlines():
+        parts = line.split(".")
+        try:
+            if len(parts) == 4 and all(0 <= int(p) <= 255 for p in parts):
+                ips.append(line)
+        except ValueError:
+            pass
+    ips = sorted(set(ips))
+
+    infrastructure = []
+    for ip in ips:
+        print(f"[+] Consultando ASN para {ip}...")
+        answer = run(["whois", "-h", "whois.cymru.com", f" -v {ip}"])
+        found = False
+        for line in answer.splitlines():
+            if "|" not in line or line.lstrip().startswith("AS"):
+                continue
+            fields = [x.strip() for x in line.split("|")]
+            if len(fields) >= 7 and fields[1] == ip:
+                infrastructure.append({
+                    "ip": fields[1], "asn": fields[0],
+                    "bgp_prefix": fields[2], "country": fields[3],
+                    "registry": fields[4], "allocated": fields[5],
+                    "as_name": fields[6]
+                })
+                found = True
+                break
+        if not found:
+            infrastructure.append({
+                "ip": ip, "error": "No se obtuvo información ASN"
+            })
+
+    report = {
+        "source": "Manual IOC enrichment",
+        "queried_at": datetime.now(timezone.utc).isoformat(),
+        "input": raw,
+        "input_host": host,
+        "url_visited": False,
+        "content_downloaded": False,
+        "dns_a_records": ips,
+        "infrastructure": infrastructure
+    }
+
+    filename = "ioc_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + ".json"
+    path = OUT / filename
+    path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    print(f"\nHostname: {host}")
+    print(f"IPv4 encontradas: {len(ips)}")
+    for item in infrastructure:
+        print(f"{item['ip']} | AS{item.get('asn', 'N/D')} | "
+              f"{item.get('as_name', item.get('error', 'N/D'))}")
+    print(f"\nInforme guardado en: {path}")
+    print("La URL no fue visitada ni se descargó su contenido.")
+
+if __name__ == "__main__":
+    main()
+PY

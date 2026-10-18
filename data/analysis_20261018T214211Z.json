@@ -1,0 +1,72 @@
+{
+  "source": "Passive IOC Analysis",
+  "analyzed_at": "2026-10-18T21:42:11.401750+00:00",
+  "input": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finterface-uniswap.vercel.app%252F%26nonce%3D123",
+  "input_host": "vercel.com",
+  "url_visited": false,
+  "content_downloaded": false,
+  "dns_a_records": [
+    "64.239.109.65",
+    "64.239.123.65"
+  ],
+  "infrastructure": [
+    {
+      "ip": "64.239.109.65",
+      "asn": "16509",
+      "bgp_prefix": "64.239.109.0/24",
+      "country": "US",
+      "registry": "arin",
+      "allocated": "2024-07-24",
+      "as_name": "AMAZON-02 - Amazon.com, Inc., US"
+    },
+    {
+      "ip": "64.239.123.65",
+      "asn": "16509",
+      "bgp_prefix": "64.239.123.0/24",
+      "country": "US",
+      "registry": "arin",
+      "allocated": "2024-07-24",
+      "as_name": "AMAZON-02 - Amazon.com, Inc., US"
+    }
+  ],
+  "url_findings": [
+    {
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finterface-uniswap.vercel.app%252F%26nonce%3D123",
+      "host": "vercel.com",
+      "path": "/login",
+      "depth": 0,
+      "parameters": [
+        {
+          "name": "next",
+          "value": "/sso-api?url=https%3A%2F%2Finterface-uniswap.vercel.app%2F&nonce=123",
+          "nested_candidates": [
+            {
+              "url": "https://interface-uniswap.vercel.app/&nonce=123",
+              "decode_level": 2
+            }
+          ]
+        }
+      ],
+      "nested_candidates": [
+        {
+          "url": "https://interface-uniswap.vercel.app/&nonce=123",
+          "decode_level": 2
+        }
+      ]
+    },
+    {
+      "url": "https://interface-uniswap.vercel.app/&nonce=123",
+      "host": "interface-uniswap.vercel.app",
+      "path": "/&nonce=123",
+      "depth": 1,
+      "parameters": [],
+      "nested_candidates": []
+    }
+  ],
+  "limitations": [
+    "Las URL anidadas son candidatos extraídos sintácticamente.",
+    "No se verificó ninguna redirección real.",
+    "DNS y ASN describen observaciones de infraestructura.",
+    "La información no demuestra por sí sola actividad maliciosa."
+  ]
+}

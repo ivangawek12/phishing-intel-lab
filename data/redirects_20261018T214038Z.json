@@ -1,0 +1,46 @@
+{
+  "analyzed_at": "2026-10-18T21:40:38.640915+00:00",
+  "input_url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finterface-uniswap.vercel.app%252F%26nonce%3D123",
+  "method": "Local URL parsing; no HTTP requests",
+  "url_visited": false,
+  "content_downloaded": false,
+  "findings": [
+    {
+      "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finterface-uniswap.vercel.app%252F%26nonce%3D123",
+      "host": "vercel.com",
+      "path": "/login",
+      "depth": 0,
+      "parameters": [
+        {
+          "name": "next",
+          "value": "/sso-api?url=https%3A%2F%2Finterface-uniswap.vercel.app%2F&nonce=123",
+          "nested_candidates": [
+            {
+              "url": "https://interface-uniswap.vercel.app/&nonce=123",
+              "decode_level": 2
+            }
+          ]
+        }
+      ],
+      "nested_candidates": [
+        {
+          "url": "https://interface-uniswap.vercel.app/&nonce=123",
+          "decode_level": 2
+        }
+      ]
+    },
+    {
+      "url": "https://interface-uniswap.vercel.app/&nonce=123",
+      "host": "interface-uniswap.vercel.app",
+      "path": "/&nonce=123",
+      "depth": 1,
+      "parameters": [],
+      "nested_candidates": []
+    }
+  ],
+  "limitations": [
+    "Los destinos anidados son candidatos extraídos del texto.",
+    "No se verificó que ocurra una redirección real.",
+    "La presencia de una URL no demuestra actividad maliciosa."
+  ]
+}

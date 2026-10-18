@@ -1,0 +1,132 @@
+[
+  {
+    "input": "https://www.ucscard.co.jp/NetServe/redirect.jsp?url=https%3A%2F%2Fwww.ucscard.co.jp%2Findex.html",
+    "scheme": "https",
+    "host": "www.ucscard.co.jp",
+    "port": null,
+    "path": "/NetServe/redirect.jsp",
+    "query_parameters": [
+      "url"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:36:28.000Z"
+  },
+  {
+    "input": "https://away.vk.ru/away.php?rh=81026b46-2498-4115-ad7e-58d1c0465ff3",
+    "scheme": "https",
+    "host": "away.vk.ru",
+    "port": null,
+    "path": "/away.php",
+    "query_parameters": [
+      "rh"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:35:39.000Z"
+  },
+  {
+    "input": "http://43.156.0.130/v3/signin/identifier?amp%3Bfollowup=https%3A%2F%2Faccounts.google.com%2F&amp%3Bifkv=AaSxoQyQEeCdGiNQploah5nAij7vrMqrlVIHby1Q4v_ARx9kttGkmffM4ARVCnkvjXQyGpUqW4kQNA&amp%3Bpassive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AWt06ST9NI3yfCrDCTxbdYME_T1VqAiwME771Td0yPuifRJmAnHUM6WB0tigjI7Ib-AXd9s5jUj2-A&dsh=S-432782781%3A1792355676363931",
+    "scheme": "http",
+    "host": "43.156.0.130",
+    "port": null,
+    "path": "/v3/signin/identifier",
+    "query_parameters": [
+      "amp;followup",
+      "amp;ifkv",
+      "amp;passive",
+      "continue",
+      "flowName",
+      "flowEntry",
+      "ifkv",
+      "dsh"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:34:44.000Z"
+  },
+  {
+    "input": "https://away.vk.ru/away.php?rh=3c1bc109-40c0-4016-a2f4-1a02efc6ba99",
+    "scheme": "https",
+    "host": "away.vk.ru",
+    "port": null,
+    "path": "/away.php",
+    "query_parameters": [
+      "rh"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:34:32.000Z"
+  },
+  {
+    "input": "http://43.156.0.130/v3/signin/identifier?amp%3Bfollowup=https%3A%2F%2Faccounts.google.com%2F&amp%3Bifkv=AWnogHfrcMjMJOA5-x4JjU2A_H62FL5Ipip8qUn0FfsVqhu1vrUBPxBl4JpnqCjPGKNrTfaShVnNJQ&amp%3Bpassive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AWt06SQKjl918H70m0nB_Le6HimykLfMfjUtJNAB1eUgUT4E0uKiJ_5rP9Q_bRBb7YemfeQD0nY6&dsh=S-721218440%3A1792355458040485",
+    "scheme": "http",
+    "host": "43.156.0.130",
+    "port": null,
+    "path": "/v3/signin/identifier",
+    "query_parameters": [
+      "amp;followup",
+      "amp;ifkv",
+      "amp;passive",
+      "continue",
+      "flowName",
+      "flowEntry",
+      "ifkv",
+      "dsh"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:31:10.000Z"
+  },
+  {
+    "input": "https://actualizacion-stream.com/",
+    "scheme": "https",
+    "host": "actualizacion-stream.com",
+    "port": null,
+    "path": "/",
+    "query_parameters": [],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:28:55.000Z"
+  },
+  {
+    "input": "https://a6ddc036.cn-dqsb.com/29098ff3",
+    "scheme": "https",
+    "host": "a6ddc036.cn-dqsb.com",
+    "port": null,
+    "path": "/29098ff3",
+    "query_parameters": [],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:22:21.000Z"
+  },
+  {
+    "input": "http://away.vk.ru/away.php?rh=2b3df459-5dd6-452a-a81a-80483085dbb7",
+    "scheme": "http",
+    "host": "away.vk.ru",
+    "port": null,
+    "path": "/away.php",
+    "query_parameters": [
+      "rh"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:21:01.000Z"
+  },
+  {
+    "input": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Finterface-uniswap.vercel.app%252F%26nonce%3Db3d03b2c8b793e02d856fac99f17df5c1de47ec0cd96380cc8f4a992a82f33a4",
+    "scheme": "https",
+    "host": "vercel.com",
+    "port": null,
+    "path": "/login",
+    "query_parameters": [
+      "next"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:06:58.000Z"
+  },
+  {
+    "input": "https://away.vk.ru/away.php?rh=4cccc6af-f312-458b-9875-539e4cee8a0e",
+    "scheme": "https",
+    "host": "away.vk.ru",
+    "port": null,
+    "path": "/away.php",
+    "query_parameters": [
+      "rh"
+    ],
+    "fragment_present": false,
+    "feed_date": "2026-10-18T20:06:12.000Z"
+  }
+]

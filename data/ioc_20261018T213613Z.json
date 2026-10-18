@@ -1,0 +1,59 @@
+{
+    "source": "Manual IOC enrichment",
+    "queried_at": "2026-10-18T21:25:29.986015+00:00",
+    "input_host": "away.vk.ru",
+    "dns_a_records": [
+        "87.240.129.133",
+        "87.240.132.67",
+        "87.240.132.78",
+        "87.240.137.164",
+        "93.186.225.194"
+    ],
+    "infrastructure": [
+        {
+            "asn": "47541",
+            "ip": "87.240.129.133",
+            "bgp_prefix": "87.240.128.0/18",
+            "country": "RU",
+            "registry": "ripencc",
+            "allocated": "2009-12-23",
+            "as_name": "VKONTAKTE-SPB-AS - LLC VK, RU"
+        },
+        {
+            "asn": "47541",
+            "ip": "87.240.132.67",
+            "bgp_prefix": "87.240.128.0/18",
+            "country": "RU",
+            "registry": "ripencc",
+            "allocated": "2009-12-23",
+            "as_name": "VKONTAKTE-SPB-AS - LLC VK, RU"
+        },
+        {
+            "asn": "47541",
+            "ip": "87.240.132.78",
+            "bgp_prefix": "87.240.128.0/18",
+            "country": "RU",
+            "registry": "ripencc",
+            "allocated": "2009-12-23",
+            "as_name": "VKONTAKTE-SPB-AS - LLC VK, RU"
+        },
+        {
+            "asn": "47541",
+            "ip": "87.240.137.164",
+            "bgp_prefix": "87.240.128.0/18",
+            "country": "RU",
+            "registry": "ripencc",
+            "allocated": "2009-12-23",
+            "as_name": "VKONTAKTE-SPB-AS - LLC VK, RU"
+        },
+        {
+            "asn": "47541",
+            "ip": "93.186.225.194",
+            "bgp_prefix": "93.186.224.0/21",
+            "country": "RU",
+            "registry": "ripencc",
+            "allocated": "2008-07-03",
+            "as_name": "VKONTAKTE-SPB-AS - LLC VK, RU"
+        }
+    ]
+}
